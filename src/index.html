@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+  <header>
+    <h2 class = "titulo"> Natucci</h2>
+    <div class = "botoeshdr"> 
+      <button type="button" class="btnheader" onclick="minimize()">-</button>
+      <button type="button" class="btnheader" onclick="close()">x</button>
+    </div> <!--botoes-->
+  </header>
+    <div class = "resultado">
+      <p>0</p>
+    </div>
+    <section class = "calculadora">
+      <div class = "botoes">
+        <button type="button" class="operar">x²</button>
+        <button type="button" class="operar">2√x</button>
+        <button type="button" class="operar">C</button>
+        <button type="button" class="operar">÷</button>
+      </div>
+
+      <div class = "botoes">
+        <button type="button" class="nums">7</button>
+        <button type="button" class="nums">8</button>
+        <button type="button" class="nums">9</button>
+        <button type="button" class="operar">X</button>
+      </div>
+
+      <div class = "botoes">
+        <button type="button" class="nums">4</button>
+        <button type="button" class="nums">5</button>
+        <button type="button" class="nums">6</button>
+        <button type="button" class="operar">-</button>
+      </div>
+
+      <div class = "botoes">
+        <button type="button" class="nums">1</button>
+        <button type="button" class="nums">2</button>
+        <button type="button" class="nums">3</button>
+        <button type="button" class="operar">+</button>
+      </div>
+
+      <div class = "botoes">
+        <button type="button" class="nums">.</button>
+        <button type="button" class="nums">0</button>
+        <button type="button" class="nums">,</button>
+        <button type="button" class="operar" id ="igual_a">=</button>
+      </div>
+  </section>
+  </body>
+  <script src="js/script.js"></script>
+</html>
+

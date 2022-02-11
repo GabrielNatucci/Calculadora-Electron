@@ -1,0 +1,106 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-app-user-select:none;
+  user-select: none;
+}
+header{
+  background-color: rgb(70, 70 ,70);
+  color: lightgrey;;
+  width: 100%;
+  display:flex;
+  justify-content:space-between;
+  height: 28px;
+  -webkit-app-region: drag;
+  border-bottom: 1px solid white;
+}
+
+.titulo{
+  font-size: 12px;
+  padding:5px;
+}
+.botoeshdr{
+  margin:0;
+  padding: 0;
+  display:flex;
+}
+
+.btnheader{
+  box-sizing: border-box;
+  height: 28px;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  background-color:rgb(70,70,70);
+  border: none;
+  color: rgb(255,255,255);
+  font-size: 15px;
+  -webkit-app-region: no-drag;
+}
+
+.botoeshdr button:hover{
+  background-color:rgb(100,100,100);
+}
+
+body{
+  background-color:rgb(70,70,70);
+}
+.resultado{
+  justify-content: space-between;
+  font-size: 50px;
+  padding: 10px;
+  background-color:rgb(70,70,70);
+  color: white;
+  height: 94px;
+  text-align: right;
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
+  margin-bottom: 8px;
+}
+
+.botoes{
+  margin: 5px 5px 5px 5px;
+  display:flex;
+  justify-content: space-between;
+}
+.operar{
+  box-sizing: border-box;
+  height: 21vw;
+  width: 22.1vw;
+  background-color:rgb(30,30,30);
+  color: rgb(255,255,255);
+  font-size: 15px;
+}
+
+.nums{
+  box-sizing: border-box;
+  height: 21vw;
+  width: 22.1vw;
+  background-color:rgb(100,100,100);
+  color: rgb(255,255,255);
+  font-size: 15px;
+}
+
+#igual_a{
+  background-color:rgb(150,150,200);
+}
+#igual_a:hover{
+  background-color:rgb(200,200,250)
+}
+
+.calculadora{
+  text-align: center;
+  margin: 5px 5px 5px 5px;
+}
+
+.botoes button:hover{
+  background-color:rgb(120,120,120);
+}
+
+.nums:hover{
+  background-color:rgb(150,150,150);
+}
