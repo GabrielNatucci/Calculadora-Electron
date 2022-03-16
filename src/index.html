@@ -9,45 +9,46 @@
   <header>
     <h2 class = "titulo"> Natucci</h2>
     <div class = "botoeshdr"> 
-      <button type="button" class="btnheader" onclick="minimize()">-</button>
-      <button type="button" class="btnheader" onclick="close()">x</button>
+      <button type="button" class="btnheader" id = "minimize">-</button>
+      <button type="button" class="btnheader" id = "close">x</button>
     </div> <!--botoes-->
   </header>
     <div class = "resultado">
-      <p>0</p>
+      <p id = "operado">0</p>
+      <p id = "resul">0</p>
     </div>
-    <section class = "calculadora">
+    <section class = "calculadora" id = "calculadora-id">
       <div class = "botoes">
         <button type="button" class="operar">x²</button>
         <button type="button" class="operar">2√x</button>
-        <button type="button" class="operar">C</button>
-        <button type="button" class="operar">÷</button>
+        <button type="button" class="operar" id = "clear">C</button>
+        <button type="button" class="operar" id = "dividir">÷</button>
       </div>
 
       <div class = "botoes">
-        <button type="button" class="nums">7</button>
-        <button type="button" class="nums">8</button>
-        <button type="button" class="nums">9</button>
-        <button type="button" class="operar">X</button>
+        <button type="button" class="nums" id = "button7">7</button>
+        <button type="button" class="nums" id = "button8">8</button>
+        <button type="button" class="nums" id = "button9">9</button>
+        <button type="button" class="operar" id = "multiplicar">*</button>
       </div>
 
       <div class = "botoes">
-        <button type="button" class="nums">4</button>
-        <button type="button" class="nums">5</button>
-        <button type="button" class="nums">6</button>
-        <button type="button" class="operar">-</button>
+        <button type="button" class="nums" id = "button4">4</button>
+        <button type="button" class="nums" id = "button5">5</button>
+        <button type="button" class="nums" id = "button6">6</button>
+        <button type="button" class="operar" id = "subtrair">-</button>
       </div>
 
       <div class = "botoes">
-        <button type="button" class="nums">1</button>
-        <button type="button" class="nums">2</button>
-        <button type="button" class="nums">3</button>
-        <button type="button" class="operar">+</button>
+        <button type="button" class="nums" id = "button1">1</button>
+        <button type="button" class="nums" id = "button2">2</button>
+        <button type="button" class="nums" id = "button3">3</button>
+        <button type="button" class="operar" id = "somar">+</button>
       </div>
 
       <div class = "botoes">
         <button type="button" class="nums">.</button>
-        <button type="button" class="nums">0</button>
+        <button type="button" class="nums" id = "button0">0</button>
         <button type="button" class="nums">,</button>
         <button type="button" class="operar" id ="igual_a">=</button>
       </div>
@@ -55,4 +56,3 @@
   </body>
   <script src="js/script.js"></script>
 </html>
-

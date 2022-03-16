@@ -16,20 +16,29 @@ const createWindow = () => {
     width: 350,
     height: 525,
     minWidth: 350,
-    minHeight: 525,
+    maxWidth: 350,
+    minHeight: 543,
+    maxHeight: 543,
     frame: false,
     icon: path.join(__dirname, IMG_DIR,"icon.png"),
-    webPreferences:{
+    webPreferences: {
       nodeIntegration: true,
-      contentIsolation: false, 
-    }
+      contextIsolation: false,
+      enableRemoteModule: true,
+      // devTools: false,
+    },
   });
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
-  ipc.on("CloseApp",()=>{
-    console.log("CU");
-  })
+
+  ipc.on('close',() => {
+    mainWindow.close();
+  });
+
+  ipc.on('minimize',() => {
+    mainWindow.minimize();
+  });
 
 
   // Open the DevTools.
@@ -40,6 +49,8 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
+
+
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
