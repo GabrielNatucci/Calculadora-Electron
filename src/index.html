@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8" />
     <title>Calculadora</title>
     <link rel="stylesheet" href="index.css">
   </head>
+
   <body>
-  <header>
-    <h2 class = "titulo"> Natucci</h2>
-    <div class = "botoeshdr"> 
-      <button type="button" class="btnheader" id = "minimize">-</button>
-      <button type="button" class="btnheader" id = "close">x</button>
-    </div> <!--botoes-->
-  </header>
+    <header>
+      <h2 class = "titulo"> Natucci</h2>
+      <div class = "botoeshdr"> 
+        <button type="button" class="btnheader" id = "minimize">-</button>
+        <button type="button" class="btnheader" id = "close">x</button>
+      </div> <!--botoes-->
+    </header>
+
     <div class = "resultado">
-      <p id = "operado">0</p>
-      <p id = "resul">0</p>
+      <p id = "calculado">0</p>
+      <p id = "mostrado">0</p>
     </div>
     <section class = "calculadora" id = "calculadora-id">
       <div class = "botoes">
@@ -52,7 +55,8 @@
         <button type="button" class="nums">,</button>
         <button type="button" class="operar" id ="igual_a">=</button>
       </div>
-  </section>
+    </section>
   </body>
+
   <script src="js/script.js"></script>
 </html>

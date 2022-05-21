@@ -1,3 +1,9 @@
+/* TODO
+    ALGORITMO PARA ENTENDER A SOMA E DIVISÃO
+    CONSERTAR DIVISÃO, QUE ADICIONA AO OPERADO.INNERHTML MESMO QUANDO É ZERO
+*/
+
+
 // -- Fechar e abrir página -- //
 const {ipcRenderer} = require('electron')
 const ipc = ipcRenderer
@@ -13,60 +19,46 @@ function minimizeWindow () {
     ipc.send("minimize")
 }
 // -- Fechar e abrir página -- //
-var escrito;
-var resultado = document.getElementById("resul")
-var operado = document.getElementById("operado")
 
-function escreveBotao(valor,resultado){
-    escrito = resultado.innerHTML;
-    if (resultado.innerHTML == "0") {
-        resultado.innerHTML = valor
-    } else {
-        resultado.innerHTML = escrito + valor
+calculado = document.getElementById("calculado"); // é o que mostra depois de algum operador ser clicado
+mostrado = document.getElementById("mostrado"); // é o que mostra o número que está sendo escrito
+calculadora = document.getElementById("calculadora-id"); // variável que guarda todos os botões
+
+function escreverNúmero(num){
+    if (mostrado.innerHTML == 0){ // se for zero o número que está lá, ele subistituirá esse valor com o digitado
+        mostrado.innerHTML = num;
+    } else { // caso contrário, só adciona o valor ao valor mostrado
+        mostrado.innerHTML += num;
     }
 }
 
-function escreveOperacao(valor,resultado,operado){
-    escrito = resultado.innerHTML;
-    operado_escrito = operado.innerHTML
-    if (resultado.innerHTML != "0"){
-        console.log(operado.innerHTML)
-        console.log(operado_escrito)
-        if (operado.innerHTML != "0"){
-            operado.innerHTML = operado_escrito +  escrito + valor   
-        } else {
-            operado.innerHTML = escrito + valor
-        }
-        resultado.innerHTML = 0
-    } 
+function calcularNumero(operador){
+    console.log(calculado.innerHTML)
+    if (calculado.innerHTML == 0){ // mesma lógica do de cima, só que com o operador aparecendo também
+        calculado.innerHTML = mostrado.innerHTML + operador;
+    } else {
+        calculado.innerHTML += mostrado.innerHTML + operador;
+    }
+    mostrado.innerHTML = 0;
 }
 
-document.getElementById("calculadora-id").addEventListener("click",function(event){
-    console.log(event.target.id[6])
-    if (isNaN(event.target.id[6]) != true){
-        escreveBotao(event.target.id[6],resultado)
-    } else {
+calculadora.addEventListener("click", function(event){
+    event.preventDefault();
+
+    if (isNaN(event.target.id[6]) == false){ // ve se o o que foi apertado na parte da calculadora é um número
+        escreverNúmero(event.target.id[6]);      
+    } else { // caso contrário, tenta ver qual operador foi acionado
         switch (event.target.id){
-            case "clear":
-                resultado.innerHTML = "0";
-                operado.innerHTML = "0";
-                break
-            case "igual_a":
-                escreveOperacao("", resultado, operado)
-                resultado.innerHTML = "0"
-                break
-            case "somar":
-                escreveOperacao("+", resultado, operado)
-                break
+            case "clear": // caso o C tenha sido clicado
+                mostrado.innerHTML = 0;
+                calculado.innerHTML = 0;
+                break;
+            case "somar": // caso o SOMAR tenha sido clicado
+                calcularNumero("+");
+                break;
             case "dividir":
-                escreveOperacao("÷", resultado, operado)
-                break
-            case "multiplicar":
-                escreveOperacao("*", resultado, operado)
-                break
-            case "subtrair":
-                escreveOperacao("-", resultado, operado)
-                break
+                calcularNumero("/");
+                break;
         }
     }
 })
