@@ -15,8 +15,8 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 350,
     height: 525,
-    //minWidth: 350,
-    //maxWidth: 350,
+    minWidth: 350,
+    maxWidth: 350,
     minHeight: 543,
     maxHeight: 543,
     frame: false,
@@ -30,7 +30,7 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  //mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   ipc.on('close',() => {
     mainWindow.close();
