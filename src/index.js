@@ -17,20 +17,20 @@ const createWindow = () => {
     height: 525,
     minWidth: 350,
     maxWidth: 350,
-    minHeight: 543,
-    maxHeight: 543,
+    minHeight: 530,
+    maxHeight: 530,
     frame: false,
     icon: path.join(__dirname, IMG_DIR,"icon.png"),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true,
-      // devTools: false,
+      //devTools: false,
     },
   });
 
   // and load the index.html of the app.
-  //mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   ipc.on('close',() => {
     mainWindow.close();
