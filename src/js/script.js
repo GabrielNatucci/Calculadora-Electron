@@ -21,6 +21,7 @@ var operar = 0; // para saber quando pode executar as operações
 var primeiroValor;
 var segundoValor;
 var temp_operador = "";
+var ponto = 0;
 
 function stripZeros(str) {
     return str.replace(/(^0+(?=\d))|(,?0+$)/g, '');
@@ -34,14 +35,21 @@ function formatacaoNum(x){
 }
 
 function escrever(num){
-    if (mostrado.innerHTML == 0){ // se for zero o número que está lá, ele subistituirá esse valor com o digitado
-        if (num == "."){
-            mostrado.innerHTML = "0" + num;
-        } else {
-            mostrado.innerHTML = num;
+    if(num == "."){
+        if (ponto == 0){
+            if(mostrado.innerHTML == 0){
+                mostrado.innerHTML = "0" + num;
+            } else {
+                mostrado.innerHTML += num;
+            }
+            ponto = 1;
         }
-    } else { // caso contrário, só adciona o valor ao valor mostrado
-        mostrado.innerHTML += num;
+    } else {
+        if(mostrado.innerHTML == "0"){
+            mostrado.innerHTML = num;
+        } else {
+            mostrado.innerHTML += num;
+        }
     }
 }
 
@@ -104,11 +112,11 @@ function Calcular(temp_operador, igual){ //função resposável pelo cálculo pr
 
 calculadora.addEventListener("click", function(event){
     event.preventDefault();
-    
     // primeiro, é necessário ver se o o que foi apertado na calculadora é um número
     if (isNaN(event.target.id[6]) == false || event.target.id[6] == "."){ /* se sim */
-        escrever(event.target.id[6]);      
+        escrever(event.target.id[6]);
     } else { // caso contrário, tenta ver qual operador foi acionado
+        ponto = 0;
         switch (event.target.id){
             case "clear": // caso o C tenha sido clicado
                 mostrado.innerHTML = 0;

@@ -62,7 +62,6 @@ body{
 }
 
 .resultado{
-  /* justify-content: space-between; */
   font-size: 50px;
   padding: 10px;
   background-color:rgb(70,70,70);
@@ -76,31 +75,21 @@ body{
 
 .botoes{
   margin: 5px 5px 5px 5px;
-  display:flex;
   justify-content: space-between;
 }
 
 .operar{
-  box-sizing: border-box;
-  height: 21vw;
-  width: 22.1vw;
   background-color:rgb(30,30,30);
-  color: rgb(255,255,255);
-  font-size: 15px;
 }
 
 .nums{
-  box-sizing: border-box;
-  height: 21vw;
-  width: 22.1vw;
   background-color:rgb(100,100,100);
-  color: rgb(255,255,255);
-  font-size: 15px;
 }
 
 #igual_a{
   background-color:rgb(150,150,200);
 }
+
 #igual_a:hover{
   background-color:rgb(200,200,250)
 }
@@ -116,4 +105,18 @@ body{
 
 .nums:hover{
   background-color:rgb(150,150,150);
+}
+
+.calculadora div button{
+  border-radius: 7px;
+  border: 1px solid rgb(50,50,50);
+  color: rgb(255,255,255);
+  height: 21vw;
+  width: 22.1vw;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.calculadora div button:active{
+  border:1px solid rgb(10,10,10);
 }
